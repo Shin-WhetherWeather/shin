@@ -16,7 +16,7 @@ body, html {
   color:#F2F2F2;
 }
 
-.project{
+.project, .emailRow{
   transition: 900ms;
 }
 
@@ -40,7 +40,7 @@ body, html {
   margin-bottom: 15px;
 }
 #textError{
-  margin-bottom: 75px;
+  margin-bottom: 45px;
 }
 
 #emailError, #textError{
@@ -76,7 +76,7 @@ button, input[type="submit"], input[type="reset"] {
 #inputEmail, #inputText{
   font-family: 'Roboto Mono', monospace;
   width: 100%;
-  font-size: 2.5vw;
+  font-size: 1.2vw;
 }
 
 #inputEmail{
@@ -254,7 +254,7 @@ a.navTab:link, a.navTab:visited{
 
 .content{
   font-size: 1vw;
-  background-color: black;
+  background-color: #121212;
 
   display: flex;
   flex-direction: column;
@@ -462,7 +462,7 @@ a{
 }
 
 #inputEmail, #inputText{
-  font-size: 1.4vw;
+  font-size: 0.9vw;
 }
 
 
