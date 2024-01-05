@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+  <script src = 'scripts/scroll.js'></script>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="row">
+      <div class="col-4 navLeft">
+        <div class="navTitle">
+          <a href="index.html">
+            seejianshin
+          </a>
+        </div>
+
+        <div class="navIcons">
+
+          <div class="navIcon" id="emailButton">
+            <span class="material-symbols-rounded">
+                mail
+            </span>
+        </div>
+
+        <div class="navIcon">
+              <a href="https://www.instagram.com/shin_designworks/" target="_blank" rel="noopener noreferrer" class = "logoIcon">
+                  <img src="Logos/Instagram_Glyph_Gradient.png" alt="Instagram" >
+              </a>
+          </div>
+
+          <div class="navIcon">
+            <a href="https://www.linkedin.com/in/seejianshin/" target="_blank" rel="noopener noreferrer" class = "logoIcon">
+                <img src="Logos/LI-In-Bug.png" alt="LinkedIn">
+            </a>
+        </div>
+        </div>
+      </div>
+      <div class="col-8 navTabs">
+        <a class="navTab" style="background-color: #F598A2;" href="index.html">
+            <span class="material-symbols-rounded">
+                arrow_back
+            </span>
+        </a>
+        <div class="navTab selectedTab" style="background-color: #FDD9C1; cursor: default;">
+          ToI
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row scrollPad"></div>
+
+
+
+
+
+
+  <div id = "emailRow" class="row emailRow">
+    <div class="col-4 phoneHide">
+      <div class="footer"></div>
+    </div>
+        <div class="col-8">
+          <div class="content contactForm">
+              <div class="headingText">
+                  Send me an email!
+              </div>
+
+              <div class="closeButton" id="closeButton">
+                  <span class="material-symbols-rounded">
+                      close
+                  </span>
+              </div>
+              <form action="https://postmail.invotes.com/send" method="post" id="email_form">
+
+              <input id = "inputEmail" type="email" name="subject" placeholder="Email" required/>
+              <br>
+              <div id="emailError"></div>
+              <textarea id = "inputText" name="text" placeholder="Message" required></textarea>
+              <div id="textError"></div>
+              <br>
+
+              <input type="hidden" name="access_token" value="pqrh2i9xg0xbn7751ux2dp73" />
+
+              <div class="tags formBottom">
+                  <div style="background-color: #FDD9C1; border-color: #FDD9C1;">
+                      <input id="submit_form" type="submit" value="Send">
+                  </div>
+
+                      <div class="emailAdd" style="background-color: #C8CFE9; border-color: #C8CFE9;" >
+                          shin.industrialdesign@gmail.com
+                      </div>
+              </div>
+          </form>
+          </div>
+    </div>
+
+</div>
+
+
+
+
+  <div class="row project personal">
+    <div class="col-4 phoneHide">
+      <div class="content">
+        <div class="top">
+          <div class="headingText">
+            ToI <br> Technology of Interactions
+          </div>
+          <br>
+          <div class="dateText">
+            2022
+          </div>
+          <br><br>
+          <div class="bodyText">
+            ToI is a series of home appliances investigating our relationships with data and technology: ToI want to keep us connected without the associated anxiety and emotional baggage. ToI requires minimal amounts of direct interactions with human users, adopting a non-interfering approach to inform us of the worlds we live in.
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="tags">
+            <div style="background-color: #C8CFE9;"">
+                Microcontrollers
+              </div>
+              <div style="background-color: #FDD9C1;"">
+                Woodworking
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="col-8">
+        <div class="awards">
+            <div>
+            <a href="https://good-design.org/projects/toi-technology-of-interactions/">
+                <img class = "goodDesign awardImg" src="Logos/Good Design Award_Winner_RGB_BLK_Logo.png">
+            </a>
+            <div>
+                <img class = "underlay" src="Logos/Good Design Award_Winner_RGB_BLK_Logo.png">
+            </div>
+            </div>
+            <div>
+            <a href="https://premiersdesignawards.vic.gov.au/entries/2023/student-design/technology-of-interactions-toi">
+                <img class = "goodDesign awardImg" src="Logos/VPDA.png">
+            </a>
+            <div>
+                <img class = "underlay" src="Logos/VPDA.png">
+            </div>
+            </div>
+            <div>
+            <a href="https://www.monash.edu/mada/student-work/mada-now-2022/design/bachelor-of-industrial-design/emerging-technologies/award-winner/see-jian-shin">
+                <img class = "goodDesign awardImg" src="Logos/Brian_M_Davis_logo.png">
+            </a>
+            <div>
+                <img class = "underlay" src="Logos/Brian_M_Davis_logo.png">
+            </div>
+            </div>
+        </div>
+        <img src="photos/ToI/ToI_Hero.jpg">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <img src="photos/ToI/lamp3_4k.jpg">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <img src="photos/ToI/lamp2_4k.jpg">
+        </div>
+        <div class="col-6">
+            <img src="photos/ToI/prototype_lamp.jpg">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-2 phoneHide"></div>
+        <div class="col-8">
+            <div class="captionText">
+                Lamp gently pulses light in the direction of world news. Breathing pattern changes based on geopolitical mood. Lamp can also be reconfigured to track storms, migratory species, or any area of interest and display them with very low fidelity.
+                <br><br>
+                Lamp is antidote to doom-scrolling, a de-specified alternative to social media feeds. Lamp connects you to the world with ridiculous amounts of data, but also refuses you the ability to engage further than to just notice them.
+            </div>
+        </div>
+        <div class="col-2 phoneHide"></div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <img src="photos/ToI/bubbles2_4k.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <img src="photos/ToI/bubbles3_4k.jpg">
+        </div>
+        <div class="col-6">
+            <img src="photos/ToI/prototype_bubbles.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 phoneHide"></div>
+        <div class="col-8">
+            <div class="captionText">
+                Bubbles pop out when there are notifications. Work emails and family texts bubble up and fizzle away around you.
+                <br><br>
+                Distancing notifications from its exact representations on digital screens to ‘packets’ of information, bubble makes a mundane occurrence eventful, and proposes a playful alternative to the dings, buzzes or flashes of our digital devices.
+            </div>
+        </div>
+        <div class="col-2 phoneHide"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <img src="photos/ToI/radio3_4k.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <img src="photos/ToI/radio2_4k.jpg">
+        </div>
+        <div class="col-6">
+            <img src="photos/ToI/prototype_radio.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 phoneHide"></div>
+        <div class="col-8">
+            <div class="captionText">
+                Radio reacts to changes in your immediate surroundings. It turns to door knockings, ducks on thunderstorms, and shivers during drastic temperature changes.
+                <br><br>
+                Radio’s movements are chaotic but learnable. The twist and turns might seem random at first, but you can predict these changes over time. Radio reminds you of the ever changing environments you exist in. Radio wants you to learn about the little details you might’ve missed.
+            </div>
+        </div>
+        <div class="col-2 phoneHide"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/oOvU7cLdljo?si=lL9N2f_SayuH3i_D">
+            </iframe>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-6">
+            <img src="photos/ToI/IMG_7570.jpg">
+        </div>
+        <div class="col-6">
+            <img src="photos/ToI/woodworking.jpg">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="row footer"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="scripts/emailform.js"></script>
+  <script src = "scripts/navigation.js"></script>
+
+
+
+</body>
+</html>
