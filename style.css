@@ -231,7 +231,7 @@ a.navTab:link, a.navTab:visited{
 }
 
 .scrollPad{
-  height: 134px;
+  height: 108px;
 }
 
 [class*="col-"] {
@@ -416,7 +416,8 @@ a{
 }
 
 .goodDesign{
-  transition: 1800ms;
+  transition: none;
+  
   -webkit-mask-image: linear-gradient(
     -75deg, 
     rgba(255, 255, 255, 1.0) 39%,
@@ -446,6 +447,7 @@ a{
 
 .goodDesign:hover{
   mask-position: 100% 0px;
+  transition:1800ms;
 }
 
 
@@ -489,7 +491,7 @@ a{
   }
 
   .navIcon>.material-symbols-rounded{
-    font-size: 36px;
+    font-size: 42px;
   }
   
   .logoIcon{
@@ -544,7 +546,7 @@ a{
   }
 
   .scrollPad{
-    height: 64px;
+    height: 70px;
   }
   
   .col-1 {width: 8.33%;}
