@@ -114,7 +114,7 @@ textarea {
 }
 
 .navbar{
-  font-size: 28px;
+  font-size: 18px;
   color:#121212;
   background-color: #F2F2F2E0;
   padding-top: 6px;
@@ -127,7 +127,7 @@ textarea {
 }
 
 .navIcon>.material-symbols-rounded{
-  font-size: 44px;
+  font-size: 28px;
   vertical-align:middle;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -136,8 +136,8 @@ textarea {
 
 .logoIcon{
   display: flex;
-  height: 38px;
-  width: 38px;
+  height: 24px;
+  width: 24px;
 }
 
 .navIcon{
@@ -151,7 +151,7 @@ textarea {
 }
 
 .navTab{
-  font-size: 22px;
+  font-size: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,8 +164,8 @@ textarea {
   transition: 600ms;
   cursor: pointer;
 
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -493,8 +493,8 @@ a{
   }
   
   .logoIcon{
-    height: 30px;
-    width: 30px;
+    height: 38px;
+    width: 38px;
   }
 
   .awardImg, .underlay{
