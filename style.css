@@ -28,13 +28,7 @@ body, html {
   display: none;
 }
 
-.emailAdd{
-  margin-left: auto;
-  text-align: right;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 2vw;
-  margin-right: 15px;
-}
+
 
 #emailError{
   margin-bottom: 15px;
@@ -176,6 +170,9 @@ textarea {
   transition: 600ms;
   cursor: pointer;
 
+  padding-top: 12px;
+  padding-bottom: 12px;
+
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -240,7 +237,7 @@ a.navTab:link, a.navTab:visited{
 }
 
 .scrollPad{
-  height: 110px;
+  height: 134px;
 }
 
 [class*="col-"] {
@@ -275,16 +272,17 @@ a.navTab:link, a.navTab:visited{
 }
 
 
+
 .headingText{
-  font-size: 1.9vw;
+  font-size: 3vw;
   font-weight: 500;
 }
 .dateText{
-  font-size: 1.2vw;
+  font-size: 2.4vw;
   font-weight: 300;
 }
 .bodyText{
-  font-size: 0.9vw;
+  font-size: 2vw;
   font-weight: 100;
 }
 
@@ -294,8 +292,8 @@ a.navTab:link, a.navTab:visited{
 
 
 .captionText{
-  font-size: 1vw;
-  font-weight: 400;
+  font-size: 2vw;
+  font-weight: 300;
   color: #121212;
   margin-top: 24px;
   margin-bottom: 64px;
@@ -305,7 +303,7 @@ a.navTab:link, a.navTab:visited{
 
 .tags{
   color: #121212;
-  font-size: 0.9vw;
+  font-size: 2vw;
   font-weight: 500;
 
   display: flex;
@@ -319,6 +317,18 @@ a.navTab:link, a.navTab:visited{
   margin-right: 12px;
   margin-top: 12px;
 }
+
+
+.emailAdd{
+  margin-left: auto;
+  text-align: right;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2vw;
+  margin-right: 0px;
+}
+
+
+
 
 img{
   width: 100%;
@@ -488,6 +498,41 @@ a{
     height:42px;
     width: auto;
   }
+
+  .navTab{
+    font-size: 22px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+
+  .headingText{
+    font-size: 1.9vw;
+    font-weight: 500;
+  }
+  .dateText{
+    font-size: 1.2vw;
+    font-weight: 300;
+  }
+  .bodyText{
+    font-size: 0.9vw;
+    font-weight: 100;
+  }
+
+
+
+  .captionText{
+    font-size: 1vw;
+    font-weight: 400;
+  }
+
+
+  .tags{
+    font-size: 0.9vw;
+  }
+
+
+
 
 
 

@@ -132,7 +132,7 @@ function validateEmail(email){
             clearTimeout(timeoutList[i]);
         }
     
-        if(emailRow.style.display == "flex"){
+        if(emailRow.style.display == "block" || emailRow.style.display == "flex"){
     
             email.style.setProperty("font-variation-settings", "'FILL' 0 ");
     
@@ -142,8 +142,13 @@ function validateEmail(email){
             
         }
         else{
+
+            if(window.innerWidth < 1080){
+                emailRow.style.display = "block";
+            }else{
+                emailRow.style.display = "flex";
+            }
     
-            emailRow.style.display = "flex";
             emailRow.style.opacity = "0.5";
             emailRow.style.paddingTop = "100px";
     
