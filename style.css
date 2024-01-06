@@ -33,9 +33,6 @@ body, html {
 #emailError{
   margin-bottom: 15px;
 }
-#textError{
-  margin-bottom: 45px;
-}
 
 #emailError, #textError{
   font-size: 1.2vw;
@@ -103,10 +100,7 @@ textarea {
   color:black;
 }
 
-.formBottom{
-  display: flex;
-  width:100%;
-}
+
 
 
 
@@ -316,6 +310,15 @@ a.navTab:link, a.navTab:visited{
   background-color: #C8CFE9;
   margin-right: 12px;
   margin-top: 12px;
+}
+
+.formBottom{
+  display: flex;
+  width:100%;
+}
+
+.formBottom>*{
+  margin-top: 0px;
 }
 
 
