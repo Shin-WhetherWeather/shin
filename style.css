@@ -126,13 +126,6 @@ textarea {
   vertical-align: center;
 }
 
-.navIcon>.material-symbols-rounded{
-  font-size: 28px;
-  vertical-align:middle;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
 
 .logoIcon{
   display: flex;
@@ -142,8 +135,20 @@ textarea {
 
 .navIcon{
   filter:saturate(0) brightness(0.5);
-  transition: 600ms;
+  transition: 400ms;
 }
+
+.navIcon>.material-symbols-rounded{
+  color: #5f6b67;
+  letter-spacing: -3px;
+  font-size: 30px;
+  vertical-align:middle;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+
 
 .navIcon:hover{
   filter:saturate(1);
@@ -291,8 +296,8 @@ a.navTab:link, a.navTab:visited{
   color: #121212;
   margin-top: 24px;
   margin-bottom: 64px;
-  margin-left: 24px;
-  margin-left: 24px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .tags{
@@ -491,7 +496,8 @@ a{
   }
 
   .navIcon>.material-symbols-rounded{
-    font-size: 42px;
+    letter-spacing: -6px;
+    font-size: 48px;
   }
   
   .logoIcon{
@@ -546,7 +552,7 @@ a{
   }
 
   .scrollPad{
-    height: 70px;
+    height: 80px;
   }
   
   .col-1 {width: 8.33%;}

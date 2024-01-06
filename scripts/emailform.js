@@ -123,6 +123,8 @@ function validateEmail(email){
         emailRow.style.display = "none";
         emailRow.style.opacity = "0.5";
     })
+
+    email.style.transition  = "font-variation-settings 0s, transform 600ms, filter 600ms";
     
     email.addEventListener("click", function(){
         topFunction();
@@ -167,3 +169,5 @@ function validateEmail(email){
         }
         
     });
+
+
