@@ -1,4 +1,107 @@
 components = {
+  "navbar":/*html*/`
+  <div class="navbar">
+  <div class="row">
+    <div class="col-4 navLeft">
+      <div class="navTitle">
+        <a href="index.html">
+          seejianshin
+        </a>
+      </div>
+
+      <div class="navIcons">
+
+        <div class="navIcon" id="emailButton">
+          <span class="material-symbols-rounded">
+              account_box
+          </span>
+      </div>
+
+      <div class="navIcon">
+            <a href="https://www.instagram.com/shin_designworks/" target="_blank" rel="noopener noreferrer" class = "logoIcon">
+                <img src="Logos/Instagram_Glyph_Gradient.png" alt="Instagram" >
+            </a>
+        </div>
+
+        <div class="navIcon">
+          <a href="https://www.linkedin.com/in/seejianshin/" target="_blank" rel="noopener noreferrer" class = "logoIcon">
+              <img src="Logos/LI-In-Bug.png" alt="LinkedIn">
+          </a>
+      </div>
+      </div>
+    </div>
+    <div class="col-8 navTabs">
+
+      <div class="navTab selectedTab" style="background-color: #F598A2;">
+        Personal
+      </div>
+      <div class="navTab" style="background-color: #FDD9C1;">
+        Industry
+      </div>
+      <div class="navTab" style="background-color: #B8E1D2;">
+        Miscellaneous
+      </div>
+
+    </div>
+  </div>
+</div>
+  `,
+
+
+
+
+
+  "navbarDynamic":/*html*/`
+  <div class="navbar">
+  <div class="row">
+    <div class="col-4 navLeft">
+      <div class="navTitle">
+        <a href="index.html">
+          seejianshin
+        </a>
+      </div>
+
+      <div class="navIcons">
+
+        <div class="navIcon" id="emailButton">
+          <span class="material-symbols-rounded">
+              account_box
+          </span>
+      </div>
+
+      <div class="navIcon">
+            <a href="https://www.instagram.com/shin_designworks/" target="_blank" rel="noopener noreferrer" class = "logoIcon">
+                <img src="Logos/Instagram_Glyph_Gradient.png" alt="Instagram" >
+            </a>
+        </div>
+
+        <div class="navIcon">
+          <a href="https://www.linkedin.com/in/seejianshin/" target="_blank" rel="noopener noreferrer" class = "logoIcon">
+              <img src="Logos/LI-In-Bug.png" alt="LinkedIn">
+          </a>
+      </div>
+      </div>
+    </div>
+    <div class="col-8 navTabs">
+      <a class="navTab" style="background-color: #F598A2;" href="index.html">
+          <span class="material-symbols-rounded">
+              arrow_back
+          </span>
+      </a>
+      <div class="navTab selectedTab" style="background-color: #FDD9C1; cursor: default;">
+        Category_title
+      </div>
+    </div>
+  </div>
+</div>
+  `,
+
+
+
+
+
+
+
   "emailRow":/*html*/`
               <div id = "emailRow" class="row emailRow">
                 <div class="col-8">
