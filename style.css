@@ -20,6 +20,10 @@ body, html {
   transition: 900ms;
 }
 
+.project{
+  display:none;
+}
+
 #emailButton{
   cursor: pointer;
 }
@@ -396,12 +400,30 @@ img{
   position: relative;
 }
 
+#rainbow{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin:12px;
+  transition:800ms;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .companies:hover{
   transform: scale(1.1);
 }
 
+#rainbowParent:hover>*>#rainbow{
+  transform: translate(0,78%);
+}
+
 a{
   line-height: 0px;
+}
+
+.project>[class*="col-"]>a{
+  width: 100%;
 }
 
 

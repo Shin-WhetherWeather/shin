@@ -63,6 +63,8 @@ tabs.forEach(element => {
 
         topFunction();
 
+        localStorage.setItem("shin_category_key", element.innerText.toUpperCase());
+
         tabs.forEach(tab=>{
             tab.classList.remove("selectedTab");
         })
@@ -73,11 +75,22 @@ tabs.forEach(element => {
     })
 });
 
+const lastCategory = localStorage.getItem("shin_category_key");
+
+if(lastCategory != null){
+    lastCategoryElement = document.getElementById(lastCategory);
+    updateProjects(lastCategoryElement);
+    tabs.forEach(tab=>{
+        tab.classList.remove("selectedTab");
+    })
+    lastCategoryElement.classList.add("selectedTab");
+}else{
+    updateProjects(tabs[0]);
+
+    tabs.forEach(tab=>{
+        tab.classList.remove("selectedTab");
+    })
+    tabs[0].classList.add("selectedTab");
+}
 
 
-updateProjects(tabs[0]);
-
-tabs.forEach(tab=>{
-    tab.classList.remove("selectedTab");
-})
-tabs[0].classList.add("selectedTab");

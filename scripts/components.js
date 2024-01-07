@@ -32,13 +32,13 @@ components = {
     </div>
     <div class="col-8 navTabs">
 
-      <div class="navTab selectedTab" style="background-color: #F598A2;">
+      <div id = "PERSONAL" class="navTab" style="background-color: #F598A2;">
         Personal
       </div>
-      <div class="navTab" style="background-color: #FDD9C1;">
+      <div id = "INDUSTRY" class="navTab" style="background-color: #FDD9C1;">
         Industry
       </div>
-      <div class="navTab" style="background-color: #B8E1D2;">
+      <div id = "MISCELLANEOUS" class="navTab" style="background-color: #B8E1D2;">
         Miscellaneous
       </div>
 
