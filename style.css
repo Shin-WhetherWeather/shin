@@ -281,7 +281,7 @@ a.navTab:link, a.navTab:visited{
   font-weight: 300;
 }
 .bodyText{
-  font-size: 1.9vw;
+  font-size: 2.2vw;
   font-weight: 100;
 }
 
@@ -291,11 +291,11 @@ a.navTab:link, a.navTab:visited{
 
 
 .captionText{
-  font-size: 1.9vw;
+  font-size: 2.2vw;
   font-weight: 300;
   color: #121212;
-  margin-top: 24px;
-  margin-bottom: 64px;
+  margin-top: 12px;
+  margin-bottom: 32px;
   margin-left: 12px;
   margin-right: 12px;
 }
@@ -551,6 +551,8 @@ a{
 
 
   .captionText{
+    margin-top: 24px;
+    margin-bottom: 64px;
     font-size: 0.9vw;
     font-weight: 400;
   }
