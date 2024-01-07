@@ -270,6 +270,22 @@ a.navTab:link, a.navTab:visited{
 
 }
 
+#homeButton{
+  text-decoration: none; 
+  line-height: normal; 
+  color: #121212;
+}
+
+#homeButton>*{
+  transition: 600ms;
+}
+
+#homeButton:hover>*{
+  margin-left: 18px;
+  margin-right: 18px;
+  color:#F2F2F2;
+}
+
 
 
 .headingText{
