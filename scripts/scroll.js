@@ -18,8 +18,6 @@ function topFunction() {
     );
 
 
-
-
     $(window).animate(
       {scrollTop:0},
       {
@@ -31,8 +29,5 @@ function topFunction() {
       }
       );
 
-
-
-    console.log("scroll top");
     }
   }
