@@ -389,7 +389,9 @@ img{
 .awards>*{
   padding: 12px;
   position: relative;
+  display: flex;
 }
+
 
 
 .companies{
