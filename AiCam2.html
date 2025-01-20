@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Cam</title>
+  <link rel="icon" type="image/x-icon" href="Logos/cloud.svg">
+  <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+  <script src = 'scripts/scroll.js'></script>
+</head>
+<body>
+
+<div data-include="navbar-AICam"></div>
+
+  <div class="row scrollPad"></div>
+
+
+
+
+  <div data-include="emailRow"></div>
+
+
+
+
+
+
+
+  <div class="row project Industry">
+    <div class="col-4 phoneHide">
+      <div class="content">
+        <div class="top">
+          <div class="headingText">
+            AI Polaroid Camera v2
+          </div>
+          <br>
+          <div class="dateText">
+            2024
+          </div>
+          <br><br>
+          <div class="bodyText">
+            A second iteration of the AI Polaroid Camera, completed as part of my Engineering Final Year Project. This project slightly improved the design, and focused heavily on the engineering aspects of the camera.
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="tags">
+            <div style="background-color: #F598A2;">
+              PCB Design
+            </div>
+            <div style="background-color: #B8E1D2;">
+              Surface Modelling
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <img src="photos/AiCam/hero.jpg">
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-1 phoneHide"></div>
+    <div class="col-5">
+        <img src="photos/AiCam/front.png">
+    </div>
+    <div class="col-5">
+      <img src="photos/AiCam/hand.jpg">
+    </div>
+    <div class="col-1 phoneHide"></div>
+</div>   
+
+<div class="row">
+  <div class="col-1 phoneHide"></div>
+  <div class="col-5">
+      <img src="photos/AiCam/open.jpg">
+  </div>
+  <div class="col-5">
+    <img src="photos/AiCam/rear.png">
+  </div>
+  <div class="col-1 phoneHide"></div>
+</div>   
+
+<div class="row">
+  <div class="col-2 phoneHide"></div>
+  <div class="col-8">
+      <div class="captionText">
+        The second generation of the camera has a design change, simplifying to a single navigation knob and a more streamlined form. The internals were also designed into two trays for easier assembly and maintenance. 
+      </div>
+  </div>
+  <div class="col-2 phoneHide"></div>
+</div>  
+
+
+
+<div class="row">
+  <div class="col-3">
+      <img src="photos/AiCam/USBPCB.jpg">
+  </div>
+  <div class="col-3">
+    <img src="photos/AiCam/MAINPCB.jpg">
+  </div>
+  <div class="col-3">
+    <img src="photos/AiCam/POWERPCB.jpg">
+  </div>
+  <div class="col-3">
+    <img src="photos/AiCam/HOTPLATE.jpg">
+  </div>
+</div>   
+
+<div class="row">
+  <div class="col-2 phoneHide"></div>
+  <div class="col-8">
+      <div class="captionText">
+        Custom PCBs were made and assembled on a hot plate. From left to right are the USB PCB, Main PCB that holds the Raspberry Pi, Power PCB to charge and discharge the battery, and the Power PCB on the hotplate.
+      </div>
+  </div>
+  <div class="col-2 phoneHide"></div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+      <img src="photos/AiCam/internal.jpg">
+  </div>
+  <div class="col-4">
+    <img src="photos/AiCam/external.jpg">
+  </div>
+  <div class="col-4">
+    <img src="photos/AiCam/external_front.jpg">
+  </div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-2 phoneHide"></div>
+  <div class="col-8">
+      <div class="captionText snug">
+        A compliant slide latch was designed and 3D printed to hold the printer tray. Try the interactive demo below!
+      </div>
+  </div>
+  <div class="col-2 phoneHide"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-6">
+      <img id = "camFrames" src="photos/AiCam/Clip Frames/0095.png">
+  </div>
+  <div class="col-6 slideInteractive">
+
+    <svg id = "topDragParent" onload="makeDraggable(evt)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 566.9291 425.1969"><defs>
+      <style>
+        .cls-1{isolation:isolate;}.cls-2{fill:#7d7d7d;}
+        .cls-3{fill:url(#linear-gradient);}.cls-4{mask:url(#mask);}
+        .cls-5{opacity:0.15;mix-blend-mode:multiply;}
+        .cls-6{filter:url(#luminosity-invert);}
+      </style><filter id="luminosity-invert" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/></filter><mask id="mask" x="94.3503" y="117.8895" width="378.24" height="35.28" maskUnits="userSpaceOnUse"></mask>
+      <linearGradient id="linear-gradient" x1="96.4957" y1="135.4884" x2="470.4334" y2="135.4884" gradientUnits="userSpaceOnUse"><stop offset="0.0165" stop-color="#c56e16"/><stop offset="0.1786" stop-color="#f6891f"/><stop offset="0.7955" stop-color="#f6891f"/><stop offset="0.8398" stop-color="#f0861e"/><stop offset="0.8983" stop-color="#e07d1b"/><stop offset="0.9645" stop-color="#c46e15"/><stop offset="0.9797" stop-color="#bd6a14"/></linearGradient>
+
+    </defs>
+      <g class="cls-1">
+        <g id="Layer_4" data-name="Layer 4">
+        <path class="cls-2 dragGroup" d="M263.7586,146.6012h25.63a0,0,0,0,1,0,0v63.037A11.4815,11.4815,0,0,1,277.9068,221.12H275.24a11.4815,11.4815,0,0,1-11.4815-11.4815v-63.037A0,0,0,0,1,263.7586,146.6012Z"/>
+        <path class="cls-2 dragGroup" d="M311.3241,149.2679a1.3471,1.3471,0,0,0-1.3543,1.4159l2.7628,62.057a1.5,1.5,0,0,0,1.48,1.416h.3135a2.38,2.38,0,0,0,1.9947-1.2944l9.2527-20.7446c.3175-.7119-.0539-1.2031-.8254-1.0915l-6.1575.8906a1.2471,1.2471,0,0,1-1.4529-1.2136l-1.4182-40.019a1.4836,1.4836,0,0,0-1.4675-1.4164Z"/>
+        <path id="p22" class="cls-2 dragGroup" d="M239.9908,149.2679a1.347,1.347,0,0,0-1.3543,1.4159l2.7628,62.057a1.5,1.5,0,0,0,1.48,1.416h.3135a2.38,2.38,0,0,0,1.9946-1.2944l9.2528-20.7446c.3175-.7119-.0539-1.2031-.8254-1.0915l-6.1575.8906a1.2472,1.2472,0,0,1-1.453-1.2136l-1.4181-40.019a1.4837,1.4837,0,0,0-1.4675-1.4164Z"/>
+        <path id = "topDrag" class="cls-3 draggable" d="M469.7247,151.0434H97.2044a.7086.7086,0,0,1-.7069-.758l1.5471-22.162a8.2372,8.2372,0,0,1,8.18-7.66l177.24-.53,177.24.53a8.2374,8.2374,0,0,1,8.18,7.66l1.547,22.162A.7086.7086,0,0,1,469.7247,151.0434Z"/>
+      </g>
+    </g>
+  </svg>
+
+
+
+    <img style="pointer-events: none;" id="slideBase" src="photos/AiCam/Vector/Base.svg">
+
+    
+    
+
+
+  <svg id="slideParent" style="pointer-events: none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 566.9291 425.1969">
+    <defs>
+        <style>
+        .cls-91{isolation:isolate;}
+        .cls-92{fill:#f6891f;}
+        .cls-93{mask:url(#mask);}
+        .cls-94{opacity:0.05;mix-blend-mode:multiply;}
+        .cls-5{filter:url(#luminosity-invert);}
+        </style>
+    
+        <filter id="luminosity-invert" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feColorMatrix values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+        </filter>
+    </defs>
+    
+    
+    <g class="cls-91">
+        <g id="Layer_3" data-name="Layer 3">
+            <rect id="slideSlide" class="cls-92" x="235.7944" y="197.2507" width="104.8889" height="34.0157" rx="15.5906"/>
+        </g>
+    </g>
+    </svg>
+  
+  </div>
+</div> 
+
+
+
+
+
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-5">
+      <img src="photos/AiCam/slide_open.jpg">
+  </div>
+  <div class="col-5">
+    <img src="photos/AiCam/slide_close.jpg">
+  </div>
+  <div class="col-1"></div>
+</div> 
+
+
+
+<div class="row">
+  <div class="col-2 phoneHide"></div>
+  <div class="col-8">
+      <div class="captionText">
+        The camera prints with an off-the-shelf Bluetooth printer, and is attached to the removable tray for recharging and photo paper refilling.
+      </div>
+  </div>
+  <div class="col-2 phoneHide"></div>
+</div>    
+
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-5">
+      <img src="photos/AiCam/printer_open.jpg">
+  </div>
+  <div class="col-5">
+    <img src="photos/AiCam/printer_close.jpg">
+  </div>
+  <div class="col-1"></div>
+</div> 
+
+<div class="row">
+  <div class="col-2 phoneHide"></div>
+  <div class="col-8">
+    <img src="photos/AiCam/back.jpg">
+  </div>
+  <div class="col-2 phoneHide"></div>
+</div> 
+
+
+
+
+<div style="opacity: 0; position: fixed; z-index: -8; height: 1px;">
+  <img src="photos/AiCam/Clip Frames/0000.png">
+<img src="photos/AiCam/Clip Frames/0001.png">
+<img src="photos/AiCam/Clip Frames/0002.png">
+<img src="photos/AiCam/Clip Frames/0003.png">
+<img src="photos/AiCam/Clip Frames/0004.png">
+<img src="photos/AiCam/Clip Frames/0005.png">
+<img src="photos/AiCam/Clip Frames/0006.png">
+<img src="photos/AiCam/Clip Frames/0007.png">
+<img src="photos/AiCam/Clip Frames/0008.png">
+<img src="photos/AiCam/Clip Frames/0009.png">
+<img src="photos/AiCam/Clip Frames/0010.png">
+<img src="photos/AiCam/Clip Frames/0011.png">
+<img src="photos/AiCam/Clip Frames/0012.png">
+<img src="photos/AiCam/Clip Frames/0013.png">
+<img src="photos/AiCam/Clip Frames/0014.png">
+<img src="photos/AiCam/Clip Frames/0015.png">
+<img src="photos/AiCam/Clip Frames/0016.png">
+<img src="photos/AiCam/Clip Frames/0017.png">
+<img src="photos/AiCam/Clip Frames/0018.png">
+<img src="photos/AiCam/Clip Frames/0019.png">
+<img src="photos/AiCam/Clip Frames/0020.png">
+<img src="photos/AiCam/Clip Frames/0021.png">
+<img src="photos/AiCam/Clip Frames/0022.png">
+<img src="photos/AiCam/Clip Frames/0023.png">
+<img src="photos/AiCam/Clip Frames/0024.png">
+<img src="photos/AiCam/Clip Frames/0025.png">
+<img src="photos/AiCam/Clip Frames/0026.png">
+<img src="photos/AiCam/Clip Frames/0027.png">
+<img src="photos/AiCam/Clip Frames/0028.png">
+<img src="photos/AiCam/Clip Frames/0029.png">
+<img src="photos/AiCam/Clip Frames/0030.png">
+<img src="photos/AiCam/Clip Frames/0031.png">
+<img src="photos/AiCam/Clip Frames/0032.png">
+<img src="photos/AiCam/Clip Frames/0033.png">
+<img src="photos/AiCam/Clip Frames/0034.png">
+<img src="photos/AiCam/Clip Frames/0035.png">
+<img src="photos/AiCam/Clip Frames/0036.png">
+<img src="photos/AiCam/Clip Frames/0037.png">
+<img src="photos/AiCam/Clip Frames/0038.png">
+<img src="photos/AiCam/Clip Frames/0039.png">
+<img src="photos/AiCam/Clip Frames/0040.png">
+<img src="photos/AiCam/Clip Frames/0041.png">
+<img src="photos/AiCam/Clip Frames/0042.png">
+<img src="photos/AiCam/Clip Frames/0043.png">
+<img src="photos/AiCam/Clip Frames/0044.png">
+<img src="photos/AiCam/Clip Frames/0045.png">
+<img src="photos/AiCam/Clip Frames/0046.png">
+<img src="photos/AiCam/Clip Frames/0047.png">
+<img src="photos/AiCam/Clip Frames/0048.png">
+<img src="photos/AiCam/Clip Frames/0049.png">
+<img src="photos/AiCam/Clip Frames/0050.png">
+<img src="photos/AiCam/Clip Frames/0051.png">
+<img src="photos/AiCam/Clip Frames/0052.png">
+<img src="photos/AiCam/Clip Frames/0053.png">
+<img src="photos/AiCam/Clip Frames/0054.png">
+<img src="photos/AiCam/Clip Frames/0055.png">
+<img src="photos/AiCam/Clip Frames/0056.png">
+<img src="photos/AiCam/Clip Frames/0057.png">
+<img src="photos/AiCam/Clip Frames/0058.png">
+<img src="photos/AiCam/Clip Frames/0059.png">
+<img src="photos/AiCam/Clip Frames/0060.png">
+<img src="photos/AiCam/Clip Frames/0061.png">
+<img src="photos/AiCam/Clip Frames/0062.png">
+<img src="photos/AiCam/Clip Frames/0063.png">
+<img src="photos/AiCam/Clip Frames/0064.png">
+<img src="photos/AiCam/Clip Frames/0065.png">
+<img src="photos/AiCam/Clip Frames/0066.png">
+<img src="photos/AiCam/Clip Frames/0067.png">
+<img src="photos/AiCam/Clip Frames/0068.png">
+<img src="photos/AiCam/Clip Frames/0069.png">
+<img src="photos/AiCam/Clip Frames/0070.png">
+<img src="photos/AiCam/Clip Frames/0071.png">
+<img src="photos/AiCam/Clip Frames/0072.png">
+<img src="photos/AiCam/Clip Frames/0073.png">
+<img src="photos/AiCam/Clip Frames/0074.png">
+<img src="photos/AiCam/Clip Frames/0075.png">
+<img src="photos/AiCam/Clip Frames/0076.png">
+<img src="photos/AiCam/Clip Frames/0077.png">
+<img src="photos/AiCam/Clip Frames/0078.png">
+<img src="photos/AiCam/Clip Frames/0079.png">
+<img src="photos/AiCam/Clip Frames/0080.png">
+<img src="photos/AiCam/Clip Frames/0081.png">
+<img src="photos/AiCam/Clip Frames/0082.png">
+<img src="photos/AiCam/Clip Frames/0083.png">
+<img src="photos/AiCam/Clip Frames/0084.png">
+<img src="photos/AiCam/Clip Frames/0085.png">
+<img src="photos/AiCam/Clip Frames/0086.png">
+<img src="photos/AiCam/Clip Frames/0087.png">
+<img src="photos/AiCam/Clip Frames/0088.png">
+<img src="photos/AiCam/Clip Frames/0089.png">
+<img src="photos/AiCam/Clip Frames/0090.png">
+<img src="photos/AiCam/Clip Frames/0091.png">
+<img src="photos/AiCam/Clip Frames/0092.png">
+<img src="photos/AiCam/Clip Frames/0093.png">
+<img src="photos/AiCam/Clip Frames/0094.png">
+<img src="photos/AiCam/Clip Frames/0095.png">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="row footer"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="scripts/components.js"></script>
+    <script src="scripts/componentLoader.js"></script>
+  <script src="scripts/emailform.js"></script>
+  <script src = "scripts/navigation.js"></script>
+  <script src = "scripts/slideScript.js"></script>
+
+
+
+</body>
+</html>

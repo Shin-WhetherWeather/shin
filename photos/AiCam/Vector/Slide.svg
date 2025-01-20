@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 566.9291 425.1969">
+
+<defs>
+    <style>
+    .cls-1{isolation:isolate;}
+    .cls-2{fill:#f6891f;}
+    .cls-3{mask:url(#mask);}
+    .cls-4{opacity:0.05;mix-blend-mode:multiply;}
+    .cls-5{filter:url(#luminosity-invert);}
+    </style>
+
+    <filter id="luminosity-invert" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feColorMatrix values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+    </filter>
+</defs>
+
+<title>Slide</title>
+
+<g class="cls-1" onclick="alert('click!')">
+    <g id="Layer_3" data-name="Layer 3">
+        <rect class="cls-2" x="235.7944" y="197.2507" width="104.8889" height="34.0157" rx="15.5906"/>
+
+        <g class="cls-3">
+            <g class="cls-4">
+                <rect x="235.7944" y="197.2507" width="104.8889" height="34.0157" rx="15.5906"/>
+            </g>
+        </g>
+    </g>
+</g>
+
+</svg>

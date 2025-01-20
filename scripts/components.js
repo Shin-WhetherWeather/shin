@@ -157,6 +157,7 @@ components = {
                       <div style="background-color: #C8CFE9;">Animations</div>
                       <div style="background-color: #FDD9C1;">Woodworking</div>
                       <div style="background-color: #C8CFE9;">Leathercrafts</div>
+                      <div style="background-color: #B8E1D2;">CNC</div>
                     </div>
                     <br><br>
                     <div class="bodyText">
@@ -173,8 +174,8 @@ components = {
                       Programming Languages
                     </div>
                     <div class="tags">
-                      <div style="background-color: #e4e694;">Python</div>
                       <div style="background-color: #5a86d8;">C++</div>
+                      <div style="background-color: #e4e694;">Python</div>
                       <div style="background-color: #95e072;">Node.js</div>
                       <div style="background-color: #e7823e;">MATLAB</div>
                     </div>

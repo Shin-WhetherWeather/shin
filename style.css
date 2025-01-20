@@ -14,6 +14,13 @@ body, html {
   background-color: #dbdbdb;
   transition: 500ms;
   color:#F2F2F2;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .project, .emailRow{
@@ -100,6 +107,38 @@ textarea {
   color:black;
 }
 
+.slideInteractive{
+  position:relative;
+  aspect-ratio: 1.3;
+}
+
+.slideInteractive>*{
+  position:absolute;
+  top:0;
+}
+
+.cls-1{
+  touch-action: none;
+}
+
+
+.draggable{
+  pointer-events: all;
+  cursor:move;
+}
+
+#slideSlide{
+  pointer-events: all;
+  cursor: pointer;
+}
+
+#topDragParent{
+  transition: 800ms;
+}
+
+#slideParent{
+  transition:200ms;
+}
 
 
 
@@ -305,7 +344,6 @@ a.navTab:link, a.navTab:visited{
   color: #f2f2f2;
 }
 
-
 .captionText{
   font-size: 2.2vw;
   font-weight: 300;
@@ -314,6 +352,10 @@ a.navTab:link, a.navTab:visited{
   margin-bottom: 32px;
   margin-left: 12px;
   margin-right: 12px;
+}
+
+.captionText>a:visited, .captionText>a:link{
+  color: #121212;
 }
 
 .tags{
@@ -356,6 +398,12 @@ a.navTab:link, a.navTab:visited{
 
 img{
   width: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .bottom{
@@ -399,19 +447,20 @@ img{
   z-index: 2;
 
   display: flex;
+  flex-direction:column;
   align-content: flex-end;
   justify-content: flex-end;
 
   right:0px;
   
   margin: 12px;
-
-  transition: 600ms;
 }
 
 .companies>*{
   padding: 12px;
   position: relative;
+  transition: 600ms;
+  margin-left: auto
 }
 
 #rainbow{
@@ -424,7 +473,7 @@ img{
   pointer-events: none;
 }
 
-.companies:hover{
+.companies>*:hover{
   transform: scale(1.1);
 }
 
@@ -500,7 +549,9 @@ a{
 }
 
 
-
+.slideInteractive>svg{
+  width: 100%;
+}
 
 
 
@@ -513,6 +564,12 @@ a{
 
 
 @media only screen and (min-width: 1080px) {
+
+  .slideInteractive{
+    aspect-ratio: auto;
+  }
+
+
   #submit_form, .emailAdd{
     font-size: 0.9vw;
 }
@@ -575,6 +632,8 @@ a{
     font-weight: 400;
   }
 
+ 
+
 
   .tags{
     font-size: 0.9vw;
@@ -610,3 +669,6 @@ a{
 
 
 
+.captionText.snug{
+  margin-bottom: -48px;
+}
