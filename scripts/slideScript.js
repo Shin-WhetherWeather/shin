@@ -31,13 +31,13 @@ function triggerSlider(){
 };
 
 function animSlider(){
-  slideParent.style.left = "-11px";
+  slideParent.style.left = "-0.5vw";
 }
 
 function shakeSlider(){
-  slideParent.style.left = "-8px";
+  slideParent.style.left = "-0.417vw";
   setTimeout(function(){
-    slideParent.style.left = "5px";
+    slideParent.style.left = "0.5vw";
     vibrating = false;
   }, 200);
 }
@@ -178,7 +178,7 @@ function getMousePosition(evt) {
 
       if (dy < minY) { dy = minY; }
       else if (dy > maxY) { dy = maxY; 
-        slideParent.style.left = "5px";
+        slideParent.style.left = "0.5vw";
         updateImage( maxY );
         locked = true;
         endDrag(evt);
