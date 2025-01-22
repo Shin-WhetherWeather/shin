@@ -37,7 +37,7 @@ function animSlider(){
 function shakeSlider(){
   slideParent.style.left = "-0.417vw";
   setTimeout(function(){
-    slideParent.style.left = "0.5vw";
+    slideParent.style.left = "auto";
     vibrating = false;
   }, 200);
 }
@@ -178,7 +178,7 @@ function getMousePosition(evt) {
 
       if (dy < minY) { dy = minY; }
       else if (dy > maxY) { dy = maxY; 
-        slideParent.style.left = "0.5vw";
+        slideParent.style.left = "auto";
         updateImage( maxY );
         locked = true;
         endDrag(evt);
