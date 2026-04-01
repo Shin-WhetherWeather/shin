@@ -128,8 +128,11 @@
         const DATA_URL = "data/latest.json";
         // ────────────────────────────────────────────────────────
 
+        const POLL_INTERVAL = 24;  // seconds between checks
+
         const $content = document.getElementById("content");
         const $meta    = document.getElementById("meta");
+        let currentMessageId = null;
 
         async function load() {
             try {
@@ -137,7 +140,14 @@
                 const resp = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-cache" });
                 if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
                 const data = await resp.json();
-                render(data);
+
+                // Only re-render if the message actually changed
+                if (data.message_id !== currentMessageId) {
+                    currentMessageId = data.message_id;
+                    render(data);
+                }
+
+                updateStatus();
             } catch (err) {
                 $content.innerHTML = `<div class="error">Couldn't load data.<br>${err.message}</div>`;
             }
@@ -175,7 +185,7 @@
 
             if (data.fetched_at) {
                 const fetched = new Date(data.fetched_at);
-                $meta.textContent = `Last synced: ${fetched.toLocaleString()}`;
+                $meta.dataset.synced = `Last synced: ${fetched.toLocaleString()} · `;
             }
         }
 
@@ -185,7 +195,23 @@
             return el.innerHTML;
         }
 
+        // ── Auto-polling ────────────────────────────────────────
+        let secondsUntilNext = POLL_INTERVAL;
+
+        function updateStatus() {
+            secondsUntilNext = POLL_INTERVAL;
+        }
+
+        function tick() {
+            secondsUntilNext--;
+            if (secondsUntilNext <= 0) {
+                load();
+            }
+            $meta.textContent = `${$meta.dataset.synced || ""}Next check in ${secondsUntilNext}s`;
+        }
+
         load();
+        setInterval(tick, 1000);
     </script>
 </body>
 </html>
