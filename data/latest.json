@@ -1,18 +1,11 @@
 {
   "text": "",
-  "images": [
-    {
-      "url": "https://cdn.discordapp.com/attachments/1378252155588186192/1379354708912898059/image.jpg?ex=69ce14ad&is=69ccc32d&hm=155d9002783eab970570263e8f5dcf305d6cfa5d4750ed4c1d5f18d0f5e337b7&",
-      "proxy_url": "https://media.discordapp.net/attachments/1378252155588186192/1379354708912898059/image.jpg?ex=69ce14ad&is=69ccc32d&hm=155d9002783eab970570263e8f5dcf305d6cfa5d4750ed4c1d5f18d0f5e337b7&",
-      "width": 3840,
-      "height": 1080
-    }
-  ],
+  "images": [],
   "author": {
     "name": "MachineEye Bot",
     "avatar_url": "https://cdn.discordapp.com/avatars/1374973285753815070/a_75563b565b08b8a024fea4191eb4d00a.png"
   },
   "timestamp": "2025-06-03T07:03:09.659000+00:00",
   "message_id": "1379354708422033562",
-  "fetched_at": "2026-04-01T09:27:48.299491+00:00"
+  "fetched_at": "2026-04-08T09:36:38.647104+00:00"
 }
