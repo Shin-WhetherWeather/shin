@@ -9,207 +9,306 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0e0e10;
+            background: #0a0a0c;
             color: #e0e0e0;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            padding: 2rem 1rem;
-        }
-
-        .container {
-            max-width: 640px;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 1.5rem;
-        }
-
-        /* ── Message card ─────────────────────────────────────── */
-        .card {
-            background: #1a1a1f;
-            border: 1px solid #2a2a30;
-            border-radius: 12px;
             overflow: hidden;
         }
 
-        .card-header {
+        /* ── View A: Image ────────────────────────────────────── */
+        #view-a {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid #2a2a30;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
         }
 
-        .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: #333;
-            flex-shrink: 0;
+        #view-a img {
+            width: 100%;
+            height: 100vh;
+            object-fit: contain;
+            display: block;
         }
 
-        .author-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #f0f0f0;
+        .status {
+            position: fixed;
+            bottom: 1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            color: #444;
+            letter-spacing: 0.05em;
+            z-index: 10;
         }
 
-        .timestamp {
-            font-size: 0.8rem;
-            color: #666;
-            margin-left: auto;
+        /* ── View B: Teleprompter ─────────────────────────────── */
+        #view-b {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* ── Text content ─────────────────────────────────────── */
-        .card-text {
-            padding: 1.25rem;
-            line-height: 1.6;
-            font-size: 0.95rem;
+        #view-b .text-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15vh 10vw 40vh 10vw;
+            will-change: transform;
+        }
+
+        #view-b .text-content {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(1.6rem, 4vw, 3rem);
+            line-height: 1.7;
+            color: #d0d0d0;
+            text-align: left;
+            max-width: 720px;
+            margin: 0 auto;
             white-space: pre-wrap;
             word-break: break-word;
         }
 
-        .card-text:empty { display: none; }
-
-        /* ── Images ───────────────────────────────────────────── */
-        .card-images {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
+        /* Fade edges for teleprompter */
+        #view-b::before,
+        #view-b::after {
+            content: '';
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 12vh;
+            z-index: 5;
+            pointer-events: none;
+        }
+        #view-b::before {
+            top: 0;
+            background: linear-gradient(to bottom, #0a0a0c 20%, transparent);
+        }
+        #view-b::after {
+            bottom: 0;
+            background: linear-gradient(to top, #0a0a0c 20%, transparent);
         }
 
-        .card-images img {
-            width: 100%;
-            display: block;
-            cursor: pointer;
-            transition: opacity 0.15s;
+        /* ── Dropdown switcher ────────────────────────────────── */
+        .switcher {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            z-index: 20;
         }
 
-        .card-images img:hover { opacity: 0.85; }
-
-        /* ── States ───────────────────────────────────────────── */
-        .loading, .error {
-            text-align: center;
-            padding: 3rem 1rem;
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .error { color: #c44; }
-
-        .meta {
-            text-align: center;
-            padding: 1rem;
+        .switcher select {
+            appearance: none;
+            -webkit-appearance: none;
+            background: rgba(25, 25, 30, 0.8);
+            color: #888;
+            border: 1px solid #2a2a30;
+            border-radius: 6px;
+            padding: 0.4rem 2rem 0.4rem 0.65rem;
             font-size: 0.75rem;
-            color: #444;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23555'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.6rem center;
         }
+        .switcher select:hover { border-color: #444; color: #aaa; }
+
+        /* ── Loading / Error ──────────────────────────────────── */
+        .state-msg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            color: #444;
+            font-size: 0.9rem;
+        }
+        .state-msg.error { color: #c44; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Latest Update</h1>
-        <div id="content">
-            <div class="loading">Loading…</div>
+
+    <div id="view-a">
+        <div class="state-msg">Loading…</div>
+    </div>
+
+    <div id="view-b">
+        <div class="text-wrapper">
+            <div class="text-content" id="teleprompter-text"></div>
         </div>
-        <div id="meta" class="meta"></div>
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <div class="switcher">
+        <select id="view-select">
+            <option value="a">A · Image</option>
+            <option value="b">B · Text</option>
+        </select>
     </div>
 
     <script>
-        // ── Config ──────────────────────────────────────────────
-        // Path to the JSON file pushed by the Python script.
-        // Adjust if your repo structure differs.
-        const DATA_URL = "data/latest.json";
-        // ────────────────────────────────────────────────────────
+        const DATA_URL       = "data/latest.json";
+        const POLL_INTERVAL  = 8;     // seconds between checks
+        const SCROLL_SPEED   = 30;    // pixels per second
+        const PAUSE_TOP      = 3000;  // ms pause at top before scrolling
+        const PAUSE_BOTTOM   = 4000;  // ms pause at bottom before looping
 
-        const POLL_INTERVAL = 8;  // seconds between checks
+        const $viewA     = document.getElementById("view-a");
+        const $viewB     = document.getElementById("view-b");
+        const $select    = document.getElementById("view-select");
+        const $teleText  = document.getElementById("teleprompter-text");
+        const $status    = document.getElementById("status");
 
-        const $content = document.getElementById("content");
-        const $meta    = document.getElementById("meta");
+        let currentView = "a";
         let currentMessageId = null;
+        let scrollAnim = null;
+        let secondsUntilNext = POLL_INTERVAL;
 
+        // ── View switching ──────────────────────────────────────
+        $select.addEventListener("change", (e) => {
+            currentView = e.target.value;
+            applyView();
+        });
+
+        function applyView() {
+            if (currentView === "a") {
+                $viewA.style.display = "flex";
+                $viewB.style.display = "none";
+                stopTeleprompter();
+            } else {
+                $viewA.style.display = "none";
+                $viewB.style.display = "block";
+                startTeleprompter();
+            }
+        }
+
+        // ── Data fetching ───────────────────────────────────────
         async function load() {
             try {
-                // Cache-bust so the browser revalidates with the CDN
                 const resp = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-cache" });
                 if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
                 const data = await resp.json();
 
-                // Only re-render if the message actually changed
                 if (data.message_id !== currentMessageId) {
                     currentMessageId = data.message_id;
-                    render(data);
+                    renderA(data);
+                    renderB(data);
+                }
+                secondsUntilNext = POLL_INTERVAL;
+            } catch (err) {
+                $viewA.innerHTML = `<div class="state-msg error">Couldn't load data. ${err.message}</div>`;
+            }
+        }
+
+        // ── View A: Full-width image ────────────────────────────
+        function renderA(data) {
+            const img = (data.images && data.images.length > 0) ? data.images[0] : null;
+            if (img) {
+                $viewA.innerHTML = `<img src="${esc(img.proxy_url || img.url)}" alt="">`;
+            } else {
+                $viewA.innerHTML = `<div class="state-msg">No image available</div>`;
+            }
+        }
+
+        // ── View B: Teleprompter text ───────────────────────────
+        function renderB(data) {
+            $teleText.textContent = data.text || "(No text)";
+            const wrapper = $teleText.parentElement;
+            wrapper.style.transform = "translateY(0)";
+
+            if (currentView === "b") {
+                stopTeleprompter();
+                startTeleprompter();
+            }
+        }
+
+        function startTeleprompter() {
+            stopTeleprompter();
+
+            const wrapper = $teleText.parentElement;
+            const contentHeight = wrapper.scrollHeight;
+            const viewHeight = window.innerHeight;
+
+            // Don't scroll if it all fits on screen
+            if (contentHeight <= viewHeight) return;
+
+            const totalScroll = contentHeight - viewHeight + 80;
+            let currentY = 0;
+            let lastTime = null;
+            let rafId = null;
+            let timeoutId = null;
+
+            function step(timestamp) {
+                if (!lastTime) lastTime = timestamp;
+                const dt = (timestamp - lastTime) / 1000;
+                lastTime = timestamp;
+
+                currentY += SCROLL_SPEED * dt;
+
+                if (currentY >= totalScroll) {
+                    wrapper.style.transform = `translateY(-${totalScroll}px)`;
+                    // Pause at bottom, then reset
+                    timeoutId = setTimeout(() => {
+                        currentY = 0;
+                        wrapper.style.transform = "translateY(0)";
+                        // Pause at top, then scroll again
+                        timeoutId = setTimeout(() => {
+                            lastTime = null;
+                            rafId = requestAnimationFrame(step);
+                        }, PAUSE_TOP);
+                    }, PAUSE_BOTTOM);
+                    return;
                 }
 
-                updateStatus();
-            } catch (err) {
-                $content.innerHTML = `<div class="error">Couldn't load data.<br>${err.message}</div>`;
+                wrapper.style.transform = `translateY(-${currentY}px)`;
+                rafId = requestAnimationFrame(step);
             }
+
+            // Initial pause at top before first scroll
+            timeoutId = setTimeout(() => {
+                rafId = requestAnimationFrame(step);
+            }, PAUSE_TOP);
+
+            scrollAnim = {
+                stop() {
+                    if (rafId) cancelAnimationFrame(rafId);
+                    if (timeoutId) clearTimeout(timeoutId);
+                }
+            };
         }
 
-        function render(data) {
-            const date = data.timestamp ? new Date(data.timestamp) : null;
-            const timeStr = date
-                ? date.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })
-                  + " · "
-                  + date.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" })
-                : "";
-
-            const avatarHTML = data.author?.avatar_url
-                ? `<img class="avatar" src="${esc(data.author.avatar_url)}" alt="">`
-                : `<div class="avatar"></div>`;
-
-            const imagesHTML = (data.images || [])
-                .map(img => `<a href="${esc(img.url)}" target="_blank" rel="noopener">
-                    <img src="${esc(img.proxy_url || img.url)}" alt="" loading="lazy">
-                </a>`)
-                .join("");
-
-            $content.innerHTML = `
-                <div class="card">
-                    <div class="card-header">
-                        ${avatarHTML}
-                        <span class="author-name">${esc(data.author?.name || "Unknown")}</span>
-                        <span class="timestamp">${timeStr}</span>
-                    </div>
-                    ${data.text ? `<div class="card-text">${esc(data.text)}</div>` : ""}
-                    ${imagesHTML ? `<div class="card-images">${imagesHTML}</div>` : ""}
-                </div>
-            `;
-
-            if (data.fetched_at) {
-                const fetched = new Date(data.fetched_at);
-                $meta.dataset.synced = `Last synced: ${fetched.toLocaleString()} · `;
-            }
+        function stopTeleprompter() {
+            if (scrollAnim && scrollAnim.stop) scrollAnim.stop();
+            scrollAnim = null;
+            const wrapper = $teleText.parentElement;
+            wrapper.style.transform = "translateY(0)";
         }
 
+        // ── Status countdown ────────────────────────────────────
+        function tick() {
+            secondsUntilNext--;
+            if (secondsUntilNext <= 0) load();
+            $status.textContent = `Next check in ${secondsUntilNext}s`;
+        }
+
+        // ── Helpers ─────────────────────────────────────────────
         function esc(str) {
             const el = document.createElement("span");
             el.textContent = str || "";
             return el.innerHTML;
         }
 
-        // ── Auto-polling ────────────────────────────────────────
-        let secondsUntilNext = POLL_INTERVAL;
-
-        function updateStatus() {
-            secondsUntilNext = POLL_INTERVAL;
-        }
-
-        function tick() {
-            secondsUntilNext--;
-            if (secondsUntilNext <= 0) {
-                load();
-            }
-            $meta.textContent = `${$meta.dataset.synced || ""}Next check in ${secondsUntilNext}s`;
-        }
-
+        // ── Init ────────────────────────────────────────────────
+        applyView();
         load();
         setInterval(tick, 1000);
     </script>
