@@ -172,6 +172,7 @@
         let currentMessageId = null;
         let scrollAnim = null;
         let secondsUntilNext = POLL_INTERVAL;
+        let lastSynced = "";
 
         // ── View switching ──────────────────────────────────────
         $select.addEventListener("change", (e) => {
@@ -202,6 +203,10 @@
                     currentMessageId = data.message_id;
                     renderA(data);
                     renderB(data);
+                    if (data.fetched_at) {
+                        const d = new Date(data.fetched_at);
+                        lastSynced = `Last synced: ${d.toLocaleString()} · `;
+                    }
                 }
                 secondsUntilNext = POLL_INTERVAL;
             } catch (err) {
@@ -221,8 +226,21 @@
 
         // ── View B: Teleprompter text ───────────────────────────
         function renderB(data) {
-            $teleText.textContent = data.text || "(No text)";
+            const text = data.text || "(No text)";
             const wrapper = $teleText.parentElement;
+
+            // Place two copies with a full viewport gap between them
+            $teleText.textContent = text;
+            let dupeEl = document.getElementById("teleprompter-dupe");
+            if (!dupeEl) {
+                dupeEl = document.createElement("div");
+                dupeEl.id = "teleprompter-dupe";
+                dupeEl.className = "text-content";
+                dupeEl.style.marginTop = "100vh";
+                wrapper.appendChild(dupeEl);
+            }
+            dupeEl.textContent = text;
+
             wrapper.style.transform = "translateY(0)";
 
             if (currentView === "b") {
@@ -235,17 +253,21 @@
             stopTeleprompter();
 
             const wrapper = $teleText.parentElement;
-            const contentHeight = wrapper.scrollHeight;
             const viewHeight = window.innerHeight;
 
-            // Don't scroll if it all fits on screen
-            if (contentHeight <= viewHeight) return;
+            // The loop point: when the second copy reaches where the first started.
+            // That's the height of the first text block + the 100vh gap.
+            const firstBlockHeight = $teleText.offsetHeight;
+            const loopPoint = firstBlockHeight + viewHeight;
 
-            const totalScroll = contentHeight - viewHeight + 80;
+            // Don't scroll if the text fits on screen
+            if (firstBlockHeight <= viewHeight * 0.6) return;
+
             let currentY = 0;
             let lastTime = null;
             let rafId = null;
             let timeoutId = null;
+            let pausing = false;
 
             function step(timestamp) {
                 if (!lastTime) lastTime = timestamp;
@@ -254,17 +276,17 @@
 
                 currentY += SCROLL_SPEED * dt;
 
-                if (currentY >= totalScroll) {
-                    wrapper.style.transform = `translateY(-${totalScroll}px)`;
-                    // Pause at bottom, then reset
+                if (currentY >= loopPoint) {
+                    // Seamlessly reset — second copy is now where first was
+                    currentY -= loopPoint;
+
+                    // Pause briefly at the seam
+                    wrapper.style.transform = `translateY(-${currentY}px)`;
+                    pausing = true;
                     timeoutId = setTimeout(() => {
-                        currentY = 0;
-                        wrapper.style.transform = "translateY(0)";
-                        // Pause at top, then scroll again
-                        timeoutId = setTimeout(() => {
-                            lastTime = null;
-                            rafId = requestAnimationFrame(step);
-                        }, PAUSE_TOP);
+                        pausing = false;
+                        lastTime = null;
+                        rafId = requestAnimationFrame(step);
                     }, PAUSE_BOTTOM);
                     return;
                 }
@@ -297,7 +319,7 @@
         function tick() {
             secondsUntilNext--;
             if (secondsUntilNext <= 0) load();
-            $status.textContent = `Next check in ${secondsUntilNext}s`;
+            $status.textContent = `${lastSynced}Next check in ${secondsUntilNext}s`;
         }
 
         // ── Helpers ─────────────────────────────────────────────
