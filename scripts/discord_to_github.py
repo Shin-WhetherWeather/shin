@@ -7,6 +7,7 @@ Runs as a long-lived loop with error recovery.
 Requirements:
     pip install requests
  
+TEST COMMENT HERE#########    
 Environment variables (or edit the config below):
     DISCORD_BOT_TOKEN   - your Discord bot token
     DISCORD_CHANNEL_ID  - source channel ID (where images are posted)
